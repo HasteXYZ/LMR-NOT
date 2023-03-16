@@ -2,8 +2,20 @@ body {
     background-color: rgb(0, 0, 0);
 }
 #bodyLogin {
-    background-color: black;
-    
+    background: radial-gradient(circle, rgba(94,63,251,1) 14%, rgba(210,70,252,1) 100%);
+    margin-top: 15%;
+    font-size: 1em;
+    margin-left: 750px;
+    margin-right: 1025px;
+    text-decoration: none;
+}
+#bodyContato {
+    background: radial-gradient(circle, rgba(251,63,225,1) 0%, rgba(251,63,149,1) 51%, rgba(255,0,0,1) 100%);
+    margin-top: 15%;
+    font-size: 1em;
+    margin-left: 750px;
+    margin-right: 1025px;
+    text-decoration: none;
 }
 #menu {
      width: 100%;
