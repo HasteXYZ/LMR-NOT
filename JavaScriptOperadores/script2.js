@@ -13,3 +13,4 @@ TD = parseFloat(PD)*sb/100;
 SL = SB - TD;
 
 document.write('salário = ', SL);
+
