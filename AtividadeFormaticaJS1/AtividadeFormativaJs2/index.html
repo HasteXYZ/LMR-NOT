@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jogo de Adivinhação</title>
+</head>
+<body>
+  <h1>Jogo de Adivinhação</h1>
+  <div id="output"></div>
+
+  <script>
+    class JogoAdivinhacao {
+      constructor() {
+        this.numeroSorteado = Math.floor(Math.random() * 1001);
+        this.tentativas = 0;
+      }
+
+      jogar() {
+        const palpite = parseInt(prompt("Digite seu palpite (entre 0 e 1000):"));
+        this.tentativas++;
+
+        if (palpite === this.numeroSorteado) {
+          const outputDiv = document.getElementById('output');
+          outputDiv.innerHTML += "<p>Parabéns! Você acertou o número em " + this.tentativas + " tentativas.</p>";
+        } else if (palpite < this.numeroSorteado) {
+          alert("Seu palpite é menor que o número sorteado. Tente novamente.");
+          this.jogar();
+        } else {
+          alert("Seu palpite é maior que o número sorteado. Tente novamente.");
+          this.jogar();
+        }
+      }
+    }
+
+    // Exemplo de uso
+    const jogo = new JogoAdivinhacao();
+    jogo.jogar();
+  </script>
+</body>
+</html>

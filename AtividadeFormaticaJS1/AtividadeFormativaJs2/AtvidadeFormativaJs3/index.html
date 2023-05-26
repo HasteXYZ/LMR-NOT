@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Operações com Vetor</title>
+</head>
+<body>
+  <h1>Operações com Vetor</h1>
+  <div id="output"></div>
+
+  <script>
+    // Sorteia o tamanho do vetor entre 100 e 1000
+    const tamanhoVetor = Math.floor(Math.random() * (1000 - 100 + 1)) + 100;
+
+    // Constrói o vetor com números aleatórios de 1 a 100
+    const vetor = [];
+    for (let i = 0; i < tamanhoVetor; i++) {
+      vetor.push(Math.floor(Math.random() * 100) + 1);
+    }
+
+    // Exibe o vetor completo
+    const outputDiv = document.getElementById('output');
+    outputDiv.innerHTML += "<h2>Vetor completo:</h2>";
+    outputDiv.innerHTML += "<p>" + vetor.join(", ") + "</p>";
+
+    // Exibe apenas os números pares do vetor
+    outputDiv.innerHTML += "<h2>Números pares:</h2>";
+    const numerosPares = vetor.filter(num => num % 2 === 0);
+    outputDiv.innerHTML += "<p>" + numerosPares.join(", ") + "</p>";
+
+    // Exibe apenas os números ímpares do vetor
+    outputDiv.innerHTML += "<h2>Números ímpares:</h2>";
+    const numerosImpares = vetor.filter(num => num % 2 !== 0);
+    outputDiv.innerHTML += "<p>" + numerosImpares.join(", ") + "</p>";
+
+    // Exibe a quantidade de números pares nas posições ímpares
+    const paresPosicoesImpares = vetor.filter((num, index) => num % 2 === 0 && index % 2 !== 0);
+    outputDiv.innerHTML += "<h2>Quantidade de números pares nas posições ímpares:</h2>";
+    outputDiv.innerHTML += "<p>" + paresPosicoesImpares.length + "</p>";
+
+    // Exibe a quantidade de números ímpares nas posições pares
+    const imparesPosicoesPares = vetor.filter((num, index) => num % 2 !== 0 && index % 2 === 0);
+    outputDiv.innerHTML += "<h2>Quantidade de números ímpares nas posições pares:</h2>";
+    outputDiv.innerHTML += "<p>" + imparesPosicoesPares.length + "</p>";
+  </script>
+</body>
+</html>
