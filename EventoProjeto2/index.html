@@ -21,7 +21,51 @@
         </div>
         <img src="img/588a64e7d06f6719692a2d11.png" alt="Menu Hamburger">
     </div>
-        
+    <title>Galeria de Imagens</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <div class="gallery">
+      <button onclick="retroceder()">Retroceder</button>
+      <img id="imagemAtual" src="img/rock-in-rio-jpg.avif">
+      <button onclick="avancar()">Avançar</button>
+    </div>
+  
+    <script>
+      var imagens = [
+        "imagem1.jpg",
+        "imagem2.jpg",
+        "imagem3.jpg"
+      ];
+      var indiceAtual = 0;
+      var imagemAtual = document.getElementById("imagemAtual");
+  
+      function retroceder() {
+        if (indiceAtual > 0) {
+          indiceAtual--;
+        } else {
+          indiceAtual = imagens.length - 1;
+        }
+        atualizarImagem();
+      }
+  
+      function avancar() {
+        if (indiceAtual < imagens.length - 1) {
+          indiceAtual++;
+        } else {
+          indiceAtual = 0;
+        }
+        atualizarImagem();
+      }
+  
+      function atualizarImagem() {
+        imagemAtual.src = imagens[indiceAtual];
+      }
+    </script>
+
+    </div>
+    
     </div>
 
 </body>
